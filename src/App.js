@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import DisplayPicture from './components/DisplayPicture';
+import { data } from './data/user';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        data.map((user) => {
+          return (
+            <DisplayPicture width={49} height={49} user={user} />
+          )
+        })
+      }
+      
+      <DisplayPicture width={200} height={200} />
     </div>
   );
 }
