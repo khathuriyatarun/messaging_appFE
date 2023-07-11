@@ -9,7 +9,7 @@ const DisplayPicture = ({user, width = 49, height = 49, self = false }) => {
     const preview = imagePreview => setShow(imagePreview)
     
     return(
-        <div className="inline-block relative">  
+        <div className="flex flex-[0_0_auto] relative">  
             {user && show == '' ?
                 <Default width={width} height={height} name={user?.name} />
              :

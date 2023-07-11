@@ -1,5 +1,6 @@
 import './App.css';
 import DisplayPicture from './components/DisplayPicture';
+import ListCard from './components/ListCard';
 import { data } from './data/user';
 
 function App() {
@@ -8,7 +9,9 @@ function App() {
       {
         data.map((user) => {
           return (
-            <DisplayPicture user={user} />
+            <>
+              <ListCard user={user}/>
+            </>
           )
         })
       }
