@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import Default from "./Default";
 import Uploader from "./uploader"; 
 
@@ -9,7 +9,7 @@ const DisplayPicture = ({user, width = 49, height = 49, self = false }) => {
     const preview = imagePreview => setShow(imagePreview)
     
     return(
-        <div className="flex flex-[0_0_auto] relative">  
+        <div className="flex flex-[0_0_auto] w-max relative">  
             {user && show == '' ?
                 <Default width={width} height={height} name={user?.name} />
              :
@@ -20,4 +20,4 @@ const DisplayPicture = ({user, width = 49, height = 49, self = false }) => {
     )
 }
 
-export default DisplayPicture;
+export default memo(DisplayPicture);

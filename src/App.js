@@ -7,16 +7,16 @@ function App() {
   return (
     <div className="App">
       {
-        data.map((user) => {
+        data.map((chatDetails) => {
           return (
             <>
-              <ListCard user={user}/>
+              <ListCard chatDetails={chatDetails}/>
             </>
           )
         })
       }
       
-      <DisplayPicture width={200} height={200} user={data[2]} self/>
+      {/* <DisplayPicture width={200} height={200} user={{name : data[1]?.name, display : data[1]?.display}} self/> */}
     </div>
   );
 }

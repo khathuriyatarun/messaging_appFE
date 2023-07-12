@@ -1,18 +1,20 @@
+import { memo } from "react";
+import { formateDateTimeforChats } from "../../utils/dateTime";
 import DisplayPicture from "../DisplayPicture";
 
-const ListCard = ({user}) => {
+const ListCard = ({chatDetails}) => {
     return(
         <div className="flex justify-between items-center h-[70px] max-w-[500px] rounded-[60px] px-4 mx-2 cursor-pointer transition-all hover:bg-[#e1e1e1]">
-            <DisplayPicture user={user} />
+            <DisplayPicture user={{name : chatDetails?.name, display : chatDetails?.display}} />
             <div className="flex flex-auto overflow-hidden whitespace-nowrap flex-col justify-center h-full text-[#333] text-sm px-3">
-                <h6 className="font-bold">{user.name}</h6>
-                <p className="overflow-hidden whitespace-nowrap text-ellipsis">yeah! its perfact for me ey hey== ajdkf adadfaiufadfjadlf aidfadkfjad f</p>
+                <h6 className="font-bold">{chatDetails.name}</h6>
+                <p className="overflow-hidden whitespace-nowrap text-ellipsis">{chatDetails?.lastMsg?.text}</p>
             </div>
             <div className="flex flex-[0_0_auto] flex-col justify-start h-full text-[12px] text-gray-300 pt-3">
-                <p>08:15 PM</p>
+                <p>{formateDateTimeforChats(chatDetails?.lastMsg?.time)}</p>
             </div>
         </div>
     )
 }
 
-export default ListCard;
+export default memo(ListCard);

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import camera from '../../assets/icons/photo-camera.svg';
 
 const Uploader = ({preview, fileObject}) => {
@@ -22,4 +23,4 @@ const Uploader = ({preview, fileObject}) => {
     )
 }
 
-export default Uploader;
+export default memo(Uploader);

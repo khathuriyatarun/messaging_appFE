@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 
 const Default = ({width = 49, height = 49, name}) => {
     const [textColor, setTextColor] = useState('#33333')
@@ -14,16 +14,20 @@ const Default = ({width = 49, height = 49, name}) => {
     const getInitials = fullName => fullName.trim().split(" ").map(name => name.charAt(0).toUpperCase()).join("");
 
     return (
-        <span 
-            style={{
-                backgroundColor : setRandomColorScheme(),
-                color: textColor
-            }}
-            className={`flex w-[${width}px] h-[${height}px] rounded-full font-bold items-center justify-center`}
-        >
-            {getInitials(name)}
-        </span>
+        <>
+            {width && height &&
+                <span 
+                    style={{
+                        backgroundColor : setRandomColorScheme(),
+                        color: textColor
+                    }}
+                    className={`flex w-[${width}px] h-[${height}px] rounded-full font-bold items-center justify-center`}
+                >
+                    {getInitials(name)}
+                </span>
+            }
+        </>
     )
 }
 
-export default Default;
+export default memo(Default);
