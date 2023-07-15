@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/messaging_appFE/static/css/main.7db56f28.css",
+    "main.js": "/messaging_appFE/static/js/main.7cd525c1.js",
+    "static/js/787.7066aac0.chunk.js": "/messaging_appFE/static/js/787.7066aac0.chunk.js",
+    "static/media/send.svg": "/messaging_appFE/static/media/send.712774f7a6085387278b4f1708223a04.svg",
+    "static/media/photo-camera.svg": "/messaging_appFE/static/media/photo-camera.5bc006e98e76a227988ccd0f5f297c7b.svg",
+    "index.html": "/messaging_appFE/index.html",
+    "main.7db56f28.css.map": "/messaging_appFE/static/css/main.7db56f28.css.map",
+    "main.7cd525c1.js.map": "/messaging_appFE/static/js/main.7cd525c1.js.map",
+    "787.7066aac0.chunk.js.map": "/messaging_appFE/static/js/787.7066aac0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7db56f28.css",
+    "static/js/main.7cd525c1.js"
+  ]
+}
