@@ -5,7 +5,7 @@ import ToMsg from "./to";
 const MsgCard = ({chat}) => {
     return (
         <>
-            { chat?.from ?  <FromMsg {...chat} /> : <ToMsg {...chat} /> }
+            { chat?.from == true ?  <FromMsg {...chat} /> : <ToMsg {...chat} /> }
         </>
     )
 }

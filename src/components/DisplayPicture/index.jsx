@@ -5,7 +5,6 @@ import Uploader from "./uploader";
 
 const DisplayPicture = ({user, width = 49, height = 49, self = false }) => {
     const [show, setShow] = useState(user?.display)
-
     const preview = imagePreview => setShow(imagePreview)
     
     return(
