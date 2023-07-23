@@ -2,10 +2,10 @@ import { memo } from "react";
 import FromMsg from "./from";
 import ToMsg from "./to";
 
-const MsgCard = ({chat}) => {
+const MsgCard = ({chat, self, chattingWith}) => {
     return (
         <>
-            { chat?.from == true ?  <FromMsg {...chat} /> : <ToMsg {...chat} /> }
+            { chat?.from == self ?  <FromMsg {...chat} /> : <ToMsg {...chat} /> }
         </>
     )
 }

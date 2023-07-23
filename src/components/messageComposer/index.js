@@ -1,17 +1,12 @@
 import { memo, useState } from 'react';
-import { formateDateTimeforChats } from '../../utils/dateTime';
 import SendIcon from '../../assets/icons/send.svg'
 
-const MessageComposer = ({ setChatsList }) => {
+const MessageComposer = ({ sendMessage }) => {
     const [text, setText] = useState('');
 
 
     const handleSendButton = () => {
-        setChatsList(prev => [...prev, {
-            text : text,
-            time : formateDateTimeforChats(new Date().toISOString()),
-            from : true
-        }])
+        sendMessage(text)
         setText('')
     }
 

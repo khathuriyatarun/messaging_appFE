@@ -2,9 +2,9 @@ import { memo } from "react";
 import { formateDateTimeforChats } from "../../utils/dateTime";
 import DisplayPicture from "../DisplayPicture";
 
-const ListCard = ({chatDetails}) => {
+const ListCard = ({chatDetails, clickEvent}) => {
     return(
-        <div className="flex justify-between items-center h-[70px] max-w-[500px] rounded-[60px] px-4 mx-2 cursor-pointer transition-all hover:bg-[#e1e1e1]">
+        <div onClick={() => clickEvent(chatDetails.id)} className="flex justify-between items-center h-[70px] max-w-[500px] rounded-[60px] px-4 mx-2 cursor-pointer transition-all hover:bg-[#3ab4f233]">
             <DisplayPicture user={{name : chatDetails?.name, display : chatDetails?.display}} />
             <div className="flex flex-auto overflow-hidden whitespace-nowrap flex-col justify-center h-full text-[#333] text-sm px-3">
                 <h6 className="font-bold">{chatDetails.name}</h6>
