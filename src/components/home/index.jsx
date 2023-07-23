@@ -1,5 +1,3 @@
-//basics
-import { useState } from "react";
 //components
 import DisplayPicture from "../DisplayPicture";
 import ListCard from "../ListCard";
