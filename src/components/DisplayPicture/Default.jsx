@@ -6,7 +6,6 @@ const Default = ({width = 49, height = 49, name}) => {
 
     const setRandomColorScheme = () => {
         const randomIndex = Math.floor(Math.random() * colors.length);
-        console.log('random index is', randomIndex)
         if(randomIndex < 20) setTextColor('#ffffff');
         return colors[randomIndex];
     }
@@ -19,9 +18,11 @@ const Default = ({width = 49, height = 49, name}) => {
                 <span 
                     style={{
                         backgroundColor : setRandomColorScheme(),
-                        color: textColor
+                        color: textColor,
+                        width : width,
+                        height : height
                     }}
-                    className={`flex w-[${width}px] h-[${height}px] rounded-full font-bold items-center justify-center`}
+                    className={`flex rounded-full font-bold items-center justify-center`}
                 >
                     {getInitials(name)}
                 </span>

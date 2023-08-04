@@ -11,19 +11,16 @@ function App() {
   const [step, setStep] = useState(0);
   const [chatWith, setChatWith] = useState(null);
 
-  useEffect(() => {
-
-  },[])
-
-  const handleChatWindow = (id) => {
-    console.log('recieved a hit with id ::: ', id)
+  const handleChatWindow = (v) => {
+    console.log('recieved a hit with id ::: ', v?.id)
     setShowChatWindow(false);
     setChatWith(null)
-    if(id == null) return
+    if(v == null) return
 
-    setChatWith(id);
+    setChatWith(v);
     setShowChatWindow(true)
   }
+
   return (
     <div className="App">
       <div className='max-w-[450px] mx-auto'>
