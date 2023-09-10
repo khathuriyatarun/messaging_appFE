@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './Pages/HomePage';
+import ChatBox from "./Pages/ChatBox"
+import Login from './Pages/login';
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ overflow: 'scroll', height: '100vh' }}>
+      <Routes>
+        <Route element={<HomePage />} path="/" />
+        <Route element={<Login />} path="/login" />
+        <Route element={<ChatBox />} path="/chatbox" />
+
+      </Routes>
+
+
     </div>
   );
 }
