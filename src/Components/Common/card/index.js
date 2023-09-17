@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { CheckDay } from "../../Utils/checkDay"
 
-const Card = ({ userName, lastMessage, srcImage, msgTime, id }) => {
+const Card = ({ userName, lastMessage, srcImage, msgTime, id, handleNaviagte }) => {
     const [color, setColor] = useState("")
     const naviagte = useNavigate()
     useEffect(() => {
@@ -14,9 +14,6 @@ const Card = ({ userName, lastMessage, srcImage, msgTime, id }) => {
         setColor('#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0').toUpperCase());
     };
 
-    const handleNaviagte = () => {
-        naviagte('/chatbox', {state :{id : id, lastMessage:lastMessage, msgTime : msgTime}})
-    }
     return (
         <div className="flex m-[15px] items-center" onClick={handleNaviagte}>
             <div className="" >

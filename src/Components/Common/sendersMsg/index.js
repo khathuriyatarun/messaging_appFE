@@ -1,4 +1,9 @@
 const SendersMsg = ({ message, time, user }) => {
+
+    const getTime= (time) => {
+        const tempTime = new Date(time).toLocaleTimeString().split(':')
+        return tempTime[0] + ':' + tempTime[1]
+    }
     return (
         <div style={{ display: "flex", justifyContent: user ? "flex-end" : '', padding: '10px ', marginRight: user ? '' : "15%", marginLeft: user ? '  s' : '' }}>
 
@@ -7,7 +12,7 @@ const SendersMsg = ({ message, time, user }) => {
                     {message}
                 </div>
                 <div className="text-[12px] text-[grey] pl-[15px] flex items-end w-[75px] justify-end">
-                    {time}
+                {getTime(time)}
                 </div>
             </div>
         </div>
